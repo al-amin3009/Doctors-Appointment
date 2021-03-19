@@ -1,0 +1,23 @@
+[
+    {   
+        "name":"Dr.JohnDoe",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "name":"Dr.MaryEllis",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    }
+]

@@ -1,0 +1,11 @@
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Please select a schedule</mat-label>
+        <mat-select (selectionChange)="openDialog()" [(ngModel)]="selectedScheduleTime">
+          <mat-option *ngFor="let schedule of scheduleTimes" [value]="schedule">
+            {{schedule}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+

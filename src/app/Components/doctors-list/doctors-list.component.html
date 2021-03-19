@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-xs-12">
+        <app-doctor
+                *ngFor= "let doctorElement of doctors; let i = index"
+                [doctor]='doctorElement'
+                [index]='i'
+        ></app-doctor>
+    </div>
+</div>
+

@@ -1,0 +1,12 @@
+<p>calender works! {{ doctor.name }} {{ doctor.availibility.sun }}</p>
+<mat-form-field>
+    <input matInput [matDatepicker]="picker" 
+                    [min]="minDate"
+                    [matDatepickerFilter]="weekendsDatesFilter"
+                    placeholder="Choose a date" 
+                    (dateChange)="valueChanged($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker ></mat-datepicker>
+</mat-form-field>
+
+<app-schedules *ngIf='scheduleView' [dateSelected] = 'selectedDate' [doctor]='doctor'></app-schedules>
