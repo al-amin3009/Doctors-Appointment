@@ -6,7 +6,7 @@ export class DoctorsService {
 
     booking: any[] = [];
 
-    weekDays = ['sun','mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+    weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
     doctors: any = demodata;
 
@@ -14,95 +14,104 @@ export class DoctorsService {
 
     selectedDoctorId: number;
 
-    getDoctors(){
+    getDoctors() {
         return this.doctors.slice();
     }
 
-    getDoctor(id: number){
+    getDoctor(id: number) {
         return this.doctors[id];
     }
 
-    getWeekEnds(id: number){
+    getWeekEnds(id: number) {
         const weekEnds = []
-        for(let day of this.weekDays)
-        {
-            if(!this.doctors[id].availibility[day])
-            {
+        for (let day of this.weekDays) {
+            if (!this.doctors[id].availibility[day]) {
                 weekEnds.push(this.weekDays.findIndex(x => x === day));
             }
         }
-        
+
         return weekEnds;
     }
 
-    getSelectedDateSchedule(date: Date){
+    getSelectedDateSchedule(date: Date) {
         const day = this.weekDays[date.getDay()];
         const selectedDateTime = this.doctors[this.selectedDoctorId].availibility[day];
         return selectedDateTime.split(' - ');
     }
 
-    getAllSchedules(startingTime: Date, endingTime: Date, durationTime: number){
+    getAllSchedules(startingTime: Date, endingTime: Date, durationTime: number) {
         // console.log(durationTime);
 
         let schedules = [];
 
-        
-        
+        let preBooking: any[] = this.booking.filter(d => d.id === this.selectedDoctorId);
 
-        while(startingTime < endingTime)
-        {
-            schedules.push(this.convertDateToTime(startingTime));
-            this.convertDateToTime(startingTime);
-            startingTime.setMinutes(startingTime.getMinutes() + durationTime);
-                //console.log(startingTime);
+        // console.log(this.booking);
+        // console.log(preBooking);
+
+        while (startingTime < endingTime) {
+
+            if (preBooking.find(doctor => doctor.date.getFullYear() === startingTime.getFullYear()) &&
+                preBooking.find(doctor => doctor.date.getMonth() === startingTime.getMonth()) &&
+                preBooking.find(doctor => doctor.date.getDate() === startingTime.getDate()) &&
+                preBooking.find(doctor => doctor.date.getHours() === startingTime.getHours()) &&
+                preBooking.find(doctor => doctor.date.getMinutes() === startingTime.getMinutes())) {
+
+                startingTime.setMinutes(startingTime.getMinutes() + durationTime);
+            }
+
+            else {
+                schedules.push(this.convertDateToTime(startingTime));
+                this.convertDateToTime(startingTime);
+                startingTime.setMinutes(startingTime.getMinutes() + durationTime);
+            }
+
         }
         return schedules;
     }
 
-    convertTimeToDate(date: Date,time: any){
+    convertTimeToDate(date: Date, time: any) {
         const ScheduleTime = new Date(date);
         ScheduleTime.setHours(time.substr(0, 2));
         ScheduleTime.setMinutes(time.substr(3, 2));
-        if(time.substr(6,2) === 'PM' && ScheduleTime.getHours()!==12) {
-          ScheduleTime.setHours(ScheduleTime.getHours()+12)
+        if (time.substr(6, 2) === 'PM' && ScheduleTime.getHours() !== 12) {
+            ScheduleTime.setHours(ScheduleTime.getHours() + 12)
         }
         //console.log(ScheduleTime);
         return ScheduleTime;
     }
 
-    convertDateToTime(date: Date){
+    convertDateToTime(date: Date) {
         let stringTime = '';
         let hours = date.getHours();
         let min = date.getMinutes();
-        
-        if( hours >= 12)
-        {
-            if(hours > 12)
+
+        if (hours >= 12) {
+            if (hours > 12)
                 hours = hours - 12;
-            stringTime = (hours < 10 ? '0'+hours : hours) + ':' + (min > 0 ? min : '00') + ' PM';
+            stringTime = (hours < 10 ? '0' + hours : hours) + ':' + (min > 0 ? min : '00') + ' PM';
         }
-        else
-        {
-            if(hours == 0)
+        else {
+            if (hours == 0)
                 hours = 12;
-            stringTime = (hours < 10 ? '0'+hours : hours) + ':' + (min > 0 ? min : '00') + ' AM';
+            stringTime = (hours < 10 ? '0' + hours : hours) + ':' + (min > 0 ? min : '00') + ' AM';
         }
         return stringTime;
     }
 
-    onSaveBooking(id: number, date: Date, name: string, telephone: string, reason: string){
+    onSaveBooking(id: number, date: Date, name: string, telephone: string, reason: string) {
         let newBooking = {
             id: id,
             date: date,
             name: name,
             telephone: telephone,
             reason: reason
-        }; 
+        };
         //console.log(newBooking);
-        
+
         this.booking.push(newBooking);
         //console.log(this.booking);
-        
+
     }
 
 }
