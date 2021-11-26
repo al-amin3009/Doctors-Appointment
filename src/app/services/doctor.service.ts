@@ -1,21 +1,46 @@
 
 import { BookingComponent } from '../Components/calendar/schedules/booking/booking.component';
 import demodata from '../data/data.json';
+import {HttpClient} from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
 
 export class DoctorsService {
 
-    booking: any[] = [];
+    constructor(private http: HttpClient) {}
+
+    booking: any[] ;
 
     weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
-    doctors: any = demodata;
-
-    // selectedDate: Date;
+    doctors: any[]=demodata;
 
     selectedDoctorId: number;
 
+    url: string = 'http://localhost:3000/doctors';
+    // selectedDate: Date;
+
+    getData() {
+        console.log('start');
+
+        return this.http.get(this.url);
+                
+    }
+    
+
     getDoctors() {
-        return this.doctors.slice();
+        // this.getData().subscribe((data:any) => {
+        //                     data.map(doctor => 
+        //                         {
+        //                             this.doctors.push(doctor)
+        //                         })
+        //                 });
+        // console.log(this.doctors);
+        
+        return this.doctors;
     }
 
     getDoctor(id: number) {

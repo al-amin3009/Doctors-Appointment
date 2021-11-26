@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-
-
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
@@ -18,7 +16,7 @@ export class DoctorComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    //console.log(this.doctor);
+    // console.log(this.doctor);
   }
 
 }

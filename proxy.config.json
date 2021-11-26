@@ -1,0 +1,10 @@
+{
+  "/b": {
+    "target": "https://jsonkeeper.com",
+    "secure": true,
+    "pathRewrite": {
+    "^/b": ""
+  },
+    "changeOrigin": true
+  }
+}

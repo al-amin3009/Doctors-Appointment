@@ -1,0 +1,13 @@
+<div>
+    <div class="form-group row">
+        <label for="search" class="col-sm-2 col-form-label"
+                style="text-align: right;">Search</label>
+        <div class="col-sm-6">
+            <input type="text"
+              id="search"
+              class="form-control"
+              [(ngModel)]='searchValue'
+              (ngModelChange)="searchValueChange()">
+        </div>
+    </div>
+</div>
