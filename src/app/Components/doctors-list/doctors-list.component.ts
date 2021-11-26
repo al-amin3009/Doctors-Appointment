@@ -8,7 +8,7 @@ import { DoctorsService } from '../../services/doctor.service';
   styleUrls: ['./doctors-list.component.css']
 })
 export class DoctorsListComponent implements OnInit {
-
+  searchValueFilter : string;
   doctors: any = [];
 
   constructor(private doctorService: DoctorsService, private http: HttpClient) { }

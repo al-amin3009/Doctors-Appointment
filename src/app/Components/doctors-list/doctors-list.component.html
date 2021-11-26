@@ -1,7 +1,8 @@
+<app-search-doctors (inputValue)='searchValueFilter = $event'></app-search-doctors>
 <div class="row">
     <div class="col-xs-12">
         <app-doctor
-                *ngFor= "let doctorElement of doctors; let i = index"
+                *ngFor= "let doctorElement of doctors | searchFilter:searchValueFilter; let i = index"
                 [doctor]='doctorElement'
                 [index]='i'
         ></app-doctor>

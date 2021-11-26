@@ -10,7 +10,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
 import {MatDialogModule} from "@angular/material/dialog";
 
 
@@ -23,6 +22,10 @@ import { HeaderComponent } from './Components/header/header.component';
 import { CalendarComponent } from './Components/calendar/calendar.component';
 import { SchedulesComponent } from './Components/calendar/schedules/schedules.component';
 import { BookingComponent } from './Components/calendar/schedules/booking/booking.component';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { SearchDoctorsComponent } from './Components/doctors-list/search-doctors/search-doctors.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { BookingComponent } from './Components/calendar/schedules/booking/bookin
     HeaderComponent,
     CalendarComponent,
     SchedulesComponent,
-    BookingComponent
+    BookingComponent,
+    SearchFilterPipe,
+    SearchDoctorsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { BookingComponent } from './Components/calendar/schedules/booking/bookin
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [DoctorsService],
   bootstrap: [AppComponent]
