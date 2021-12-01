@@ -14,7 +14,7 @@ export class SchedulesComponent implements OnInit {
   @Input() dateSelected: Date;
   @Input() doctor: any;
 
-  id: number;
+  id: string;
 
   selectedScheduleTime : string ;
   appointmentView = false;
@@ -47,13 +47,21 @@ export class SchedulesComponent implements OnInit {
     const startTime = times[0];
     const endTime = times[1];
 
+    //console.log(startTime + " " + endTime);
+    
+
     this.startedScheduleTime = this.doctorsService.convertTimeToDate(this.dateSelected,startTime);
     this.endedScheduleTime = this.doctorsService.convertTimeToDate(this.dateSelected,endTime);
 
+    //console.log(this.startedScheduleTime + ' ' + this.endedScheduleTime);
+    //console.log(this.doctor);
+    
     this.scheduleTimes = this.doctorsService
                               .getAllSchedules(this.startedScheduleTime, 
                               this.endedScheduleTime,
                               this.doctor.visitDurationInMin);
+    console.log(this.scheduleTimes);
+    
   }
 
   openDialog() {

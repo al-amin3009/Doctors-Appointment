@@ -12,13 +12,13 @@ export class DoctorsService {
 
     constructor(private http: HttpClient) {}
 
-    booking: any[] ;
+    booking: any[] =[];
 
     weekDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
     doctors: any[]=demodata;
 
-    selectedDoctorId: number;
+    selectedDoctorId: string;
 
     url: string = 'http://localhost:3000/doctors';
     // selectedDate: Date;
@@ -43,14 +43,29 @@ export class DoctorsService {
         return this.doctors;
     }
 
-    getDoctor(id: number) {
-        return this.doctors[id];
+    // getDoctor(id: number) {
+    //     return this.doctors[id];
+    // }
+    getDoctor(id: string) {
+        return this.doctors.find(doctor => doctor.id === id);
     }
 
-    getWeekEnds(id: number) {
-        const weekEnds = []
+    // getWeekEnds(id: string) {
+    //     const weekEnds = []
+    //     for (let day of this.weekDays) {
+    //         if (!this.doctors[id].availibility[day]) {
+    //             weekEnds.push(this.weekDays.findIndex(x => x === day));
+    //         }
+    //     }
+
+    //     return weekEnds;
+    // }
+
+    getWeekEnds(id: string) {
+        const weekEnds = [];
+        const doctor = this.doctors.find(doctor => doctor.id === id);
         for (let day of this.weekDays) {
-            if (!this.doctors[id].availibility[day]) {
+            if (!doctor.availibility[day]) {
                 weekEnds.push(this.weekDays.findIndex(x => x === day));
             }
         }
@@ -60,28 +75,25 @@ export class DoctorsService {
 
     getSelectedDateSchedule(date: Date) {
         const day = this.weekDays[date.getDay()];
-        const selectedDateTime = this.doctors[this.selectedDoctorId].availibility[day];
+        const selectedDateTime = this.doctors.find(doctor => doctor.id === this.selectedDoctorId).availibility[day];
         return selectedDateTime.split(' - ');
     }
 
     getAllSchedules(startingTime: Date, endingTime: Date, durationTime: number) {
-        // console.log(durationTime);
-
         let schedules = [];
 
         let preBooking: any[] = this.booking.filter(d => d.id === this.selectedDoctorId);
 
-        // console.log(this.booking);
-        // console.log(preBooking);
-
+        let booked = preBooking.filter(doctor => doctor.date.getFullYear() === startingTime.getFullYear() &&
+                                                    doctor.date.getMonth() === startingTime.getMonth() && 
+                                                    doctor.date.getDate() === startingTime.getDate());
+        
         while (startingTime < endingTime) {
 
-            if (preBooking.find(doctor => doctor.date.getFullYear() === startingTime.getFullYear()) &&
-                preBooking.find(doctor => doctor.date.getMonth() === startingTime.getMonth()) &&
-                preBooking.find(doctor => doctor.date.getDate() === startingTime.getDate()) &&
-                preBooking.find(doctor => doctor.date.getHours() === startingTime.getHours()) &&
-                preBooking.find(doctor => doctor.date.getMinutes() === startingTime.getMinutes())) {
-
+            if (booked.find(doctor => this.convertDateToTime(doctor.date) === this.convertDateToTime(startingTime)) )
+            {  
+                console.log("already booked");
+                
                 startingTime.setMinutes(startingTime.getMinutes() + durationTime);
             }
 
@@ -96,13 +108,17 @@ export class DoctorsService {
     }
 
     convertTimeToDate(date: Date, time: any) {
+       
         const ScheduleTime = new Date(date);
         ScheduleTime.setHours(time.substr(0, 2));
         ScheduleTime.setMinutes(time.substr(3, 2));
         if (time.substr(6, 2) === 'PM' && ScheduleTime.getHours() !== 12) {
             ScheduleTime.setHours(ScheduleTime.getHours() + 12)
         }
-        //console.log(ScheduleTime);
+        else if(time.substr(6, 2) === 'AM' && ScheduleTime.getHours() === 12) {
+            ScheduleTime.setHours(ScheduleTime.getHours() - 12)
+        }
+        // console.log(ScheduleTime);
         return ScheduleTime;
     }
 
@@ -124,7 +140,7 @@ export class DoctorsService {
         return stringTime;
     }
 
-    onSaveBooking(id: number, date: Date, name: string, telephone: string, reason: string) {
+    onSaveBooking(id: string, date: Date, name: string, telephone: string, reason: string) {
         let newBooking = {
             id: id,
             date: date,

@@ -11,6 +11,8 @@ export class DoctorsListComponent implements OnInit {
   searchValueFilter : string;
   doctors: any = [];
 
+  p: number =1;
+
   constructor(private doctorService: DoctorsService, private http: HttpClient) { }
 
   ngOnInit(): void {
