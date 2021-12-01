@@ -10,7 +10,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import {MatDialogModule} from "@angular/material/dialog";
+import { MatDialogModule } from "@angular/material/dialog";
+import { NgxPaginationModule } from 'ngx-pagination'; 
 
 
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatSelectModule,
     MatDialogModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [DoctorsService],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 [
     {   
+        "id" : "e1",
         "name":"Dr.JohnDoe",
         "org":"KingsLondonHospital",
         "availibility":
@@ -10,7 +11,330 @@
         "visitDurationInMin":15
     },
     {
+        "id" : "e2",
         "name":"Dr.MaryEllis",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e3",
+        "name":"Doctor 3",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e4",
+        "name":"Doctor 4",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e5",
+        "name":"Doctor 5",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {   
+        "id" : "e6",
+        "name":"Doctor 6",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e7",
+        "name":"Doctor 7",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e8",
+        "name":"Doctor 8",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e9",
+        "name":"Doctor 9",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e10",
+        "name":"Doctor 10",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {   
+        "id" : "e11",
+        "name":"Dr.JohnDoe",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e12",
+        "name":"Dr.MaryEllis",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e13",
+        "name":"Doctor 13",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e14",
+        "name":"Doctor 14",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e15",
+        "name":"Doctor 15",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {   
+        "id" : "e16",
+        "name":"Doctor 16",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e17",
+        "name":"Doctor 17",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e18",
+        "name":"Doctor 18",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e19",
+        "name":"Doctor 19",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e20",
+        "name":"Doctor 20",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {   
+        "id" : "e21",
+        "name":"Dr.JohnDoe",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e22",
+        "name":"Dr.MaryEllis",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e23",
+        "name":"Doctor 23",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e24",
+        "name":"Doctor 24",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e25",
+        "name":"Doctor 25",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {   
+        "id" : "e26",
+        "name":"Doctor 26",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e27",
+        "name":"Doctor 27",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e28",
+        "name":"Doctor 28",
+        "org":"ABCHospital",
+        "availibility":
+        {
+            "sun":"12:00 PM - 06:00 PM",
+            "mon":"09:00 PM - 11:00 PM",
+            "thu":"11:00 AM - 02:00 PM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e29",
+        "name":"Doctor 29",
+        "org":"KingsLondonHospital",
+        "availibility":
+        {
+            "sun":"10:15 AM - 06:45 PM",
+            "wed":"00:00 AM - 03:00 AM"
+        },
+        "visitDurationInMin":15
+    },
+    {
+        "id" : "e30",
+        "name":"Doctor 30",
         "org":"ABCHospital",
         "availibility":
         {

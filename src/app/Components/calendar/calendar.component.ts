@@ -14,7 +14,7 @@ export class CalendarComponent implements OnInit {
 
   weekEnds: number[] = [];
   
-  id: number;
+  id: string;
   doctor: any ;
 
   scheduleView= false;
@@ -29,6 +29,10 @@ export class CalendarComponent implements OnInit {
         this.doctor = this.doctorsService.getDoctor(this.id);
       }
     )
+    // console.log(this.id);
+    // console.log(this.doctor);
+    
+    
     this.weekEnds = this.doctorsService.getWeekEnds(this.id);
     
   }
